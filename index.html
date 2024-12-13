@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiaming Wang - CC LAB 2024</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- First Image with Overlay -->
+    <div class="image-container">
+        <img id="main-image" src="images/EcoSurreal-3.jpg" alt="EcoSurreal-3" class="background-image">
+        <div class="overlay-text">
+            <h1 id="main-title">Jiaming Wang</h1>
+            <h2 id="sub-title">CC LAB 2024</h2>
+        </div>
+        <a href="https://www.jiamingwofficial.com" target="_blank" class="external-link website-link">Visit My Website</a>
+        <a href="https://www.instagram.com/jiamingw.official/" target="_blank" class="external-link instagram-link">Visit My Instagram</a>
+    </div>
+
+    <!-- Fixed White Navigation Bar -->
+    <nav class="fixed-nav">
+        <ul>
+            <li><a href="lost-found.html">Lost & Found</a></li>
+            <li><a href="face-generator.html">Face Generator</a></li>
+            <li><a href="experimental-clock.html">Experimental Clock</a></li>
+            <li><a href="exquisite-corpse.html">Exquisite Corpse</a></li>
+            <li><a href="optical-illusion.html">Optical Illusion</a></li>
+            <li><a href="data-portrait.html">Data Portrait</a></li>
+            <li><a href="autobiographical-game.html">Autobiographical Game</a></li>
+        </ul>
+    </nav>
+
+    <!-- Second Image and Movable Text -->
+    <div class="second-section">
+        <img id="second-image" src="images/EcoSurreal-4.jpg" alt="EcoSurreal-4" class="background-image">
+        <div id="text-section" class="text-section">
+            <div class="left-text">
+                <p>#Creative ML<br>
+                #Cinematography<br>
+                #UI/UX Design<br>
+                #Indie Journalism<br>
+                #AR/VR Art/Design<br>
+                #Music Production<br>
+                #PR & Marketing<br>
+                #Web Dev/Design<br>
+                #Screenwriting<br>
+                #Interactive Art<br>
+                #Spacial Design<br>
+                #Video Production</p>
+            </div>
+            <div class="right-text">
+                <p>Email:<br>contact@jiamingwofficial.com<br>Instagram:<br>jiamingw.official</p>
+            </div>
+        </div>
+        <p class="footer-text">© 2024 Jiaming Wang all rights reserved</p>
+    </div>
+
+    <!-- JavaScript for scroll-triggered and hover effects -->
+    <script>
+        const mainTitle = document.getElementById('main-title');
+        const subTitle = document.getElementById('sub-title');
+        const mainImage = document.getElementById('main-image');
+        const secondImage = document.getElementById('second-image');
+        const textSection = document.getElementById('text-section');
+        const secondSection = document.querySelector('.second-section');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            // Change text color at halfway point of first image
+            if (scrollY > windowHeight / 2) {
+                mainTitle.style.color = '#F42424';
+                subTitle.style.color = '#F42424';
+            } else {
+                mainTitle.style.color = 'white';
+                subTitle.style.color = 'white';
+            }
+
+            // Calculate fade-in for text-section
+            const fadeStart = secondSection.offsetTop - windowHeight;
+            const fadeEnd = secondSection.offsetTop;
+            if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+                const opacity = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+                textSection.style.opacity = opacity;
+            } else if (scrollY > fadeEnd) {
+                textSection.style.opacity = 1;
+            } else {
+                textSection.style.opacity = 0;
+            }
+        });
+
+        const overlayText = document.querySelector('.overlay-text');
+        overlayText.addEventListener('mouseover', () => {
+            mainImage.style.opacity = '0.8'; // Dim to 80%
+            secondImage.style.opacity = '0.8';
+        });
+
+        overlayText.addEventListener('mouseout', () => {
+            mainImage.style.opacity = '1';
+            secondImage.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
+

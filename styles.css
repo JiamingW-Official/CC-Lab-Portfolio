@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Aktiv Grotesk Ex', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Main Image with Overlays */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+/* Overlay Text - Fixed Position */
+.overlay-text {
+    position: fixed; /* Makes the text fixed and non-scrollable */
+    top: 50%; /* Lower the text position */
+    left: 2%; /* Align to the left */
+    z-index: 3;
+    text-align: left;
+    color: white;
+}
+
+.overlay-text h1,
+.overlay-text h2 {
+    font-size: 14rem;
+    font-weight: 900; /* XBold */
+    margin: 0;
+    line-height: 1.1;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* External Links */
+.external-link {
+    position: absolute;
+    font-size: 1.5rem; /* Same size as #Creative ML */
+    font-weight: 900; /* Bold */
+    color: white;
+    text-decoration: none;
+    z-index: 3;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.website-link {
+    top: 5%; /* Align horizontally with Email */
+    right: 2%; /* Align to the right side */
+    text-align: right;
+}
+
+.instagram-link {
+    top: 5%; /* Align vertically with #Creative ML */
+    left: 2%; /* Align to the left side */
+    text-align: left;
+}
+
+.external-link:hover {
+    color: #A1E1F1; /* Light blue on hover */
+    text-decoration: none; /* No underline */
+}
+
+/* Fixed Navigation Bar */
+.fixed-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    z-index: 1000;
+    text-align: center;
+    padding: 20px 0;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.fixed-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.fixed-nav li {
+    font-size: 1rem; /* Original font size */
+    font-weight: 800;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.fixed-nav a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.fixed-nav a:hover {
+    color: #A1E1F1; /* Change to light blue on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+/* Hover Effect on Bar */
+.fixed-nav:hover {
+    padding: 40px 0; /* Increase bar height on hover */
+}
+
+.fixed-nav:hover li {
+    font-size: 1.5rem; /* Increase font size of navigation items */
+}
+
+/* Second Section */
+.second-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+#text-section {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    position: absolute;
+    top: 5%; /* Align the text sections at the same height */
+    left: 2%;
+    right: 2%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-text {
+    width: 45%; /* Expand width for better spacing */
+    font-size: 1.5rem; /* Larger font size for left text */
+    line-height: 1.8;
+    text-align: left; /* Align text to the left */
+    font-weight: 900; /* Extra bold */
+}
+
+.right-text {
+    width: 45%; /* Expand width for better spacing */
+    font-size: 1.5rem; /* Match font size with left text */
+    line-height: 1.8;
+    text-align: right; /* Align text to the right */
+    font-weight: 900; /* Extra bold */
+}
+
+.footer-text {
+    position: absolute;
+    bottom: 2%; /* Positioned at the bottom */
+    left: 2%;
+    font-size: 1rem;
+    z-index: 2;
+}
